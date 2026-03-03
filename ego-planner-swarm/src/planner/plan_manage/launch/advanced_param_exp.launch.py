@@ -20,8 +20,8 @@ def generate_launch_description():
     fx = LaunchConfiguration('fx', default=387.229248046875)
     fy = LaunchConfiguration('fy', default=387.229248046875)
     
-    max_vel = LaunchConfiguration('max_vel', default=2.0)
-    max_acc = LaunchConfiguration('max_acc', default=3.0)
+    max_vel = LaunchConfiguration('max_vel', default=0.5)
+    max_acc = LaunchConfiguration('max_acc', default=2.0)
     planning_horizon = LaunchConfiguration('planning_horizon', default=7.5)
     
     point_num = LaunchConfiguration('point_num', default=1)
@@ -41,7 +41,7 @@ def generate_launch_description():
     point4_y = LaunchConfiguration('point4_y', default=30.0)
     point4_z = LaunchConfiguration('point4_z', default=1.0)
 
-    flight_type = LaunchConfiguration('flight_type', default=2)
+    flight_type = LaunchConfiguration('flight_type', default=1)
     use_distinctive_trajs = LaunchConfiguration('use_distinctive_trajs', default=True)
     
     obj_num_set = LaunchConfiguration('obj_num_set', default=10)
@@ -138,14 +138,14 @@ def generate_launch_description():
             {'fsm/waypoint4_y': point4_y},
             {'fsm/waypoint4_z': point4_z},
             
-            {'grid_map/resolution': 0.1},
+            {'grid_map/resolution': 0.15},
             {'grid_map/map_size_x': map_size_x},
             {'grid_map/map_size_y': map_size_y},
             {'grid_map/map_size_z': map_size_z},
             {'grid_map/local_update_range_x': 5.5},
             {'grid_map/local_update_range_y': 5.5},
             {'grid_map/local_update_range_z': 4.5},
-            {'grid_map/obstacles_inflation': 0.099},
+            {'grid_map/obstacles_inflation': 0.3},
             {'grid_map/local_map_margin': 10},
             {'grid_map/ground_height': -0.01},
             # camera parameter

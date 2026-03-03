@@ -6,9 +6,9 @@ imu: 1
 num_of_cam: 2  
 
 imu_topic: "/mavros/imu/data_raw"
-image0_topic: "/camera/infra1/image_rect_raw"
-image1_topic: "/camera/infra2/image_rect_raw"
-output_path: "~/output/"
+image0_topic: "/camera/camera/infra1/image_rect_raw"
+image1_topic: "/camera/camera/infra2/image_rect_raw"
+output_path: "/home/orangepi/output"
 
 cam0_calib: "left.yaml"
 cam1_calib: "right.yaml"
@@ -25,27 +25,27 @@ use_gpu_ceres   : 0
 estimate_extrinsic: 1   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
                         # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
 
-      
+       
 body_T_cam0: !!opencv-matrix
    rows: 4
    cols: 4
    dt: d
-   data: [ 7.1422401256749923e-03, 1.0554906559619942e-01,
-       9.9438844681430028e-01, 8.2759730037573975e-02,
-       -9.9876465791417512e-01, 4.9654165358031244e-02,
-       1.9031458635951903e-03, 8.5078769902178081e-03,
-       -4.9174653100637566e-02, -9.9317362964104461e-01,
-       1.0577331836557580e-01, -9.8317712503257046e-04, 0., 0., 0., 1. ]
+   data: [ 2.3855939894972478e-02, 4.1487386116117016e-04,
+       9.9971532048449030e-01, 2.0334590455935871e-03,
+       -9.9970932449556049e-01, -3.4783045749500197e-03,
+       2.3857240282864234e-02, 1.6642285684177357e-02,
+       3.4872121182814753e-03, -9.9999386461966044e-01,
+       3.3177504261572288e-04, 4.9141858814082715e-02, 0., 0., 0., 1. ]
 body_T_cam1: !!opencv-matrix
    rows: 4
    cols: 4
    dt: d
-   data: [ 7.6376425378668067e-03, 1.0499726058410214e-01,
-       9.9444318172849777e-01, 8.3813547755312953e-02,
-       -9.9876775836505405e-01, 4.9568384697992740e-02,
-       2.4372297547035626e-03, -3.1257224091269444e-02,
-       -4.9037039744556254e-02, -9.9323640212603270e-01,
-       1.0524646419155770e-01, -3.0420862250709058e-03, 0., 0., 0., 1. ]
+   data: [ 2.6380477936174263e-02, -8.6779873016961650e-05,
+       9.9965197086441682e-01, 7.0381921333987655e-03,
+       -9.9964643396142916e-01, -3.3317294414609844e-03,
+       2.6380042591456772e-02, -3.0675189116557634e-02,
+       3.3282806457971595e-03, -9.9999444600866794e-01,
+       -1.7464180562076770e-04, 4.9007240808393020e-02, 0., 0., 0., 1. ]
 
 #Multiple thread support
 multiple_thread: 1
@@ -76,5 +76,5 @@ td: 0.00                             # initial value of time offset. unit: s. re
 
 #loop closure parameters
 load_previous_pose_graph: 0        # load and reuse previous pose graph; load from 'pose_graph_save_path'
-pose_graph_save_path: "~/output/" # save and load path
+pose_graph_save_path: "/home/orangepi/output" # save and load path
 save_image: 0                   # save image in pose graph for visualization prupose; you can close this function by setting 0 

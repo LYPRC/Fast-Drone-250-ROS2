@@ -49,8 +49,8 @@ void RC_Data_t::feed(const mavros_msgs::msg::RCIn::SharedPtr pMsg)
     }
 
     // 处理特殊通道
-    mode = ((double)msg.channels[5] - 1000.0) / 1000.0;      // 通道6:飞行模式选择
-    gear = ((double)msg.channels[4] - 1000.0) / 1000.0;      // 通道5:档位切换
+    mode = ((double)msg.channels[4] - 1000.0) / 1000.0;      // 通道5:飞行模式选择 is_hover_mode
+    gear = ((double)msg.channels[5] - 1000.0) / 1000.0;      // 通道6:档位切换 is_command_mode
     reboot_cmd = ((double)msg.channels[9] - 1000.0) / 1000.0;// 通道10:重启命令
 
     check_validity();//检查数据有效性

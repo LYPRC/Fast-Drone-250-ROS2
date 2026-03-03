@@ -41,13 +41,13 @@ def generate_launch_description():
             'obj_num_set': obj_num,
             
             'camera_pose_topic': 'nouse1',
-            'depth_topic': '/camera/depth/image_rect_raw',
+            'depth_topic': '/camera/camera/depth/image_rect_raw',
             'cloud_topic': 'nouse2',
             
-            'cx': str(321.04638671875),
-            'cy': str(243.44969177246094),
-            'fx': str(387.229248046875),
-            'fy': str(387.229248046875),
+            'cx': str(321.0732116699219),
+            'cy': str(238.00889587402344),
+            'fx': str(380.6090087890625),
+            'fy': str(380.6090087890625),
             'max_vel': str(0.5),
             'max_acc': str(2.0),
             'planning_horizon': str(7.5),
